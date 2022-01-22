@@ -101,7 +101,7 @@ App = {
         adoptionInstance = instance;
 
         // Execute adopt as a transaction by sending account
-        return adoptionInstance.adopt(petId, {from: account});
+        return adoptionInstance.rent(petId, {from: account, value: 1000000000000000000});
       }).then(function(result) {
         return App.markAdopted();
       }).catch(function(err) {
